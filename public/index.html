@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIMS - Dashboard</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>DIMS Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>UB LRC Digital Information Management System</h1>
-        <nav>
-            <a href="index.html">Dashboard</a>
-            <a href="reservations.html">Reservations</a>
-            <a href="feedback.html">Feedback</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Welcome, Librarian</h2>
-            <p>Use the menu above to manage reservations and feedback.</p>
-        </section>
+  <div class="container">
+    <!-- Side Navigation -->
+    <aside class="sidebar">
+      <h2>UB LRC-DIMS</h2>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="reservations.html">Reservations</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header>
+        <h1>Dashboard</h1>
+      </header>
+
+      <!-- Top Stats Cards -->
+      <div class="stats-grid">
+        <div class="card">
+          <h3>Total Reservations</h3>
+          <p id="total-reservations">0</p>
+        </div>
+        <div class="card">
+          <h3>Pending</h3>
+          <p id="pending-reservations">0</p>
+        </div>
+        <div class="card">
+          <h3>Approved</h3>
+          <p id="approved-reservations">0</p>
+        </div>
+        <div class="card">
+          <h3>Rejected</h3>
+          <p id="rejected-reservations">0</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions / Info Cards -->
+      <div class="quick-actions-grid">
+        <div class="card">
+          <h3>Add Reservation</h3>
+          <p><a href="reservations.html">Go to Reservations</a></p>
+        </div>
+        <div class="card">
+          <h3>View Feedback</h3>
+          <p><a href="feedback.html">Go to Feedback</a></p>
+        </div>
+      </div>
     </main>
+  </div>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

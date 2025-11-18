@@ -38,6 +38,13 @@ app.post('/api/reservations', (req, res) => {
     res.json({ status: 'success' });
 });
 
+// ===== Update Reservations =====
+app.post('/api/reservations/update', (req, res) => {
+    const updatedReservations = req.body;
+    writeJSON(reservationsFile, updatedReservations);
+    res.json({ status: 'success' });
+});
+
 // ===== Feedback API =====
 app.get('/api/feedback', (req, res) => {
     res.json(readJSON(feedbackFile));
