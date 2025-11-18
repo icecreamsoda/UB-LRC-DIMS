@@ -1,1 +1,0 @@
-console.log("DIMS self-hosted JS loaded");
