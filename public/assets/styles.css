@@ -1,14 +1,14 @@
 /* ===== General ===== */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f6f8;
+    background-color: #f0f2f5;
     color: #333;
 }
 
 header {
-    background-color: #004080;
+    background-color: #1e3a8a;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -19,55 +19,75 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 1rem;
-    font-weight: bold;
+    margin-left: 1.5rem;
+    font-weight: 600;
     transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #facc15; /* gold highlight */
 }
 
+/* ===== Main Layout ===== */
 main {
     padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-/* ===== Section styling ===== */
+/* ===== Section Cards ===== */
 section {
-    background: white;
+    background-color: white;
     padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Headings ===== */
+section h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
 /* ===== Forms ===== */
-form input, form textarea, form button {
+form input, form textarea, form select {
     display: block;
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.7rem;
     margin-bottom: 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #1e3a8a;
+    outline: none;
 }
 
 form button {
-    background-color: #004080;
+    background-color: #1e3a8a;
     color: white;
     border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.2s;
 }
 
 form button:hover {
-    background-color: #0066cc;
+    background-color: #2563eb;
 }
 
 /* ===== Tables ===== */
@@ -78,26 +98,57 @@ table {
 }
 
 table th, table td {
-    border: 1px solid #ddd;
     padding: 0.8rem;
+    border-bottom: 1px solid #e5e7eb;
     text-align: left;
 }
 
 table th {
-    background-color: #004080;
+    background-color: #1e3a8a;
     color: white;
+    font-weight: 600;
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9fafb;
 }
 
-/* ===== Feedback list ===== */
+/* ===== Status badges ===== */
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.status.Pending {
+    background-color: #fbbf24;
+    color: white;
+}
+
+.status.Approved {
+    background-color: #22c55e;
+    color: white;
+}
+
+.status.Rejected {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* ===== Feedback List ===== */
 #feedback-list li {
-    padding: 0.5rem;
-    border-bottom: 1px solid #ddd;
+    padding: 0.6rem;
+    margin-bottom: 0.3rem;
+    border-radius: 8px;
+    background-color: #f3f4f6;
 }
 
-#feedback-list li:nth-child(even) {
-    background-color: #f9f9f9;
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
